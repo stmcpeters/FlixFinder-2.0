@@ -1,5 +1,5 @@
 # backend/app/main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
@@ -22,3 +22,7 @@ app.add_middleware(
 @app.get("/")
 async def get_data():
     return {"status": "success", "message": "Hello from the backend FastAPI 🙂!"}
+
+@app.get("/health", status_code=status.HTTP_200_OK)
+async def health_check():
+    return {"status": "healthy"}
