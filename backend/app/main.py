@@ -1,7 +1,6 @@
 # backend/app/main.py
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
 
 app = FastAPI()
 
